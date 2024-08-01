@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/SuraDetailsScreen.dart';
+import 'package:islami_app/Sura_module.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -166,10 +168,16 @@ class QuranTab extends StatelessWidget {
               ],
             ),
             itemBuilder: (context, index) {
-              return Text(
-                suraNames[index],
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              return InkWell(
+                onTap: ()
+                {
+                  Navigator.pushNamed(context, SuraDetailsScreen.routeName,arguments: SuraModel(suraNames[index], index));
+                },
+                child: Text(
+                  suraNames[index],
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
               );
             },
             itemCount: suraNames.length,
