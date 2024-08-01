@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/home.dart';
+import 'package:islami_app/home/home.dart';
 
 void main() {
 
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,
       routes:{
+        HomeScreen.routeName: (context)=> HomeScreen(),
         HomeScreen.routeName: (context)=> HomeScreen(),
       },
     );
