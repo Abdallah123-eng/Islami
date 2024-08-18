@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/SuraDetailsScreen.dart';
 import 'package:islami_app/Sura_module.dart';
@@ -131,19 +132,13 @@ class QuranTab extends StatelessWidget {
           "assets/images/qur2an_screen_logo.png",
           height: 227,
         ),
-        Divider(
-          thickness: 3,
-          color: Color(0xffB7935F),
-        ),
+        Divider(),
         Text(
-          "Sura Names",
+          "sura_names".tr(),
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
-        Divider(
-          thickness: 3,
-          color: Color(0xffB7935F),
-        ),
+        Divider(),
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) => Row(
@@ -151,19 +146,16 @@ class QuranTab extends StatelessWidget {
                 Expanded(
                     child: Icon(
                   Icons.star_border_purple500,
-                  color: Color(0xffB7935F),
                 )),
                 Expanded(
                   flex: 2,
                   child: Divider(
                     thickness: 2,
-                    color: Color(0xffB7935F),
                   ),
                 ),
                 Expanded(
                     child: Icon(
                   Icons.star_border_purple500,
-                  color: Color(0xffB7935F),
                 )),
               ],
             ),
@@ -176,7 +168,7 @@ class QuranTab extends StatelessWidget {
                 child: Text(
                   suraNames[index],
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               );
             },
